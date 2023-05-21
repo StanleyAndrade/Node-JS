@@ -1,3 +1,12 @@
+//Forma básica 
+var http = require('http')
+
+http.createServer(function(req, res) {
+res.end("Funcionou")
+}).listen(8080);
+
+console.log("o Servidor está rodando")
+
 //Servidor Nativo
 //importando o http
 const http = require('http')
