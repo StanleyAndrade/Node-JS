@@ -1,6 +1,7 @@
 //Forma de conectar COM o Mongoose
 const mongoose = require('mongoose')
 
+//Função que conecta ao MongoDB junto com o Mongoose
 const connectingToMongoDB = async () => {
     await mongoose.connect(`mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@nodeteste.evberpg.mongodb.net/?retryWrites=true&w=majority`, {
 }).then(() => {
