@@ -11,6 +11,14 @@ const app = express()
 //sinalizando que vai receber JSON
 app.use(express.json())
 
+//Middlewares - função que é executada antes da requisição
+app.use((req, res, next) => {
+    console.log(`Request Type: ${req.method}`) //mostra se foi GET, POST, PATCH, PUT ou Delete
+    console.log(`Content Type: ${req.headers["content-type"]}`) //mostra o que é e seu tipo: application.json
+    console.log(`Date: ${new Date()}`) //mostra dia e hora
+    next()
+})
+
 //GET - Pegando os dados do database - TUDO
 app.get("/users", async (req, res) => {
     try {
