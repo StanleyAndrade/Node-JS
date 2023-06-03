@@ -2,12 +2,12 @@ const fs = require("fs")
 const path = require("path")
 
 //Criar uma pasta
-// fs.mkdir(path.join(__dirname, "/test"), (error) => {
-//     if (error) {
-//         return console.log("Ocorreu um erro ao criar a pasta" + error)
-//     }
-//     console.log("Pasta Criada com sucesso")
-// })
+fs.mkdir(path.join(__dirname, "/test"), (error) => {
+    if (error) {
+        return console.log("Ocorreu um erro ao criar a pasta" + error)
+    }
+    console.log("Pasta Criada com sucesso")
+})
 
 //Cria arquivo
 fs.writeFile(
