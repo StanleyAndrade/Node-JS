@@ -22,13 +22,26 @@ async function createPDF() {
 createPDF()
 
 //This code make a screenshot of the url
-const puppeteer = require('puppeteer')
-
 async function tirarPrint() {
     const browser = await puppeteer.launch()
     const page = await browser.newPage()
     await page.goto('https://techsos.com.br/')
-    await page.screenshot({path: 'example.png'})
-    await browser.close()
+    //await page.screenshot({path: 'example.png'})
+    await page.setViewport({width: 1365, height: 923});
+    //await browser.close()
 }
 tirarPrint()
+
+//Screenshot FULLPAGE
+async function tirarPrintFullPage() {
+    const browser = await puppeteer.launch()
+    const page = await browser.newPage()
+    //simula celular iphone 6
+    //await page.emulate(puppeteer.devices['iPhone 6']);
+    await page.goto('https://techsos.com.br/')
+    //largura e altura
+    await page.setViewport({width: 1365, height: 923});
+    await page.screenshot({path: 'fullpage3.png', fullPage: true})
+    await browser.close()
+}
+tirarPrintFullPage()
