@@ -45,3 +45,25 @@ async function tirarPrintFullPage() {
     await browser.close()
 }
 tirarPrintFullPage()
+
+//pega dados de outro site e exibe em outro
+puppeteerExpress.get('/', async (req, res) => {
+    const browser = await puppeteer.launch()
+    const page = await browser.newPage()
+    await page.goto('https://techsos.com.br/')
+    
+    //pega os dados do site através do HTML
+    const pageContent = await page.evaluate(() => {
+        return {
+            title: document.querySelector('h1').innerHTML
+        }
+    })
+    console.log('pageContent', pageContent)
+
+    await browser.close()
+    //o pageContent irá exibir tudo. pra isolar, coloque pagContent.cada item
+    res.send({//pageContent: pageContent,
+    'Titulo H1': pageContent.title}) 
+})
+
+module.exports = puppeteerExpress
