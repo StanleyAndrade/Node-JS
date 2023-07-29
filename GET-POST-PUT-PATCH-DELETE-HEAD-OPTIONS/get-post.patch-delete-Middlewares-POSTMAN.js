@@ -53,7 +53,7 @@ dessa forma dá pra colocar dentro de uma função
 const novo = mongoose.model('UserModel')
 
 new novo({
-    firstName: "Katharine",
+    firstName: "Stanley",
     lastName: "jorge",
     email: "oi@gmail.com",
     password: 123456789
