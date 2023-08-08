@@ -14,6 +14,10 @@ connectMongoDBWithMongoose()
 const express = require('express')
 const app = express()
 
+//Importing cors
+const cors = require('cors')
+app.use(cors())
+
 //Routes from controller folder
 require('./modules/controller')
 const router1 = require('./modules/controller')
