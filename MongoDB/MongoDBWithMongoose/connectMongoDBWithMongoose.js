@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 //Função que conecta ao MongoDB junto com o Mongoose
 const connectingToMongoDB = async () => {
-    await mongoose.connect(`mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@nodeteste.evberpg.mongodb.net/?retryWrites=true&w=majority`, {
+    await mongoose.connect(`mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}preencher`, {
 }).then(() => {
     console.log('Conectado ao MongoDB')
 }).catch((error) => {
