@@ -3,5 +3,5 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 //conectando ao MongoDB
-const connectingToMongoDB = require('./connectMongoDBWithMongoose')
-connectingToMongoDB()
+const connectMongoDBWithMongoose = require('./connectMongoDBWithMongoose')
+connectMongoDBWithMongoose()
